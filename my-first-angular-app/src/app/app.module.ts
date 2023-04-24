@@ -8,6 +8,7 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { FormsModule } from '@angular/forms';
 import { UserNameViewerComponent } from './user-name-viewer/user-name-viewer.component';
+import { AssignmentThreeComponent } from './assignment-three/assignment-three.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UserNameViewerComponent } from './user-name-viewer/user-name-viewer.com
     ServersComponent,
     SuccessAlertComponent,
     WarningAlertComponent,
-    UserNameViewerComponent
+    UserNameViewerComponent,
+    AssignmentThreeComponent
   ],
   imports: [
     BrowserModule,
