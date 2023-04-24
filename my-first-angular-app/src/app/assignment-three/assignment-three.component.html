@@ -23,9 +23,9 @@
 </button>
 <p *ngIf="showSecret">Secret Password = tuna</p>
 <div
-  *ngFor="let logItem of logs"
-  [ngStyle]="{ backgroundColor: logItem >= 5 ? 'blue' : 'none' }"
-  [ngClass]="{ aboveFive: logItem >= 5 }"
+  *ngFor="let logItem of logs; let i = index"
+  [ngStyle]="{ backgroundColor: i >= 5 ? 'blue' : 'none' }"
+  [ngClass]="{ aboveFive: i >= 5 }"
 >
   {{ logItem }}
 </div>
