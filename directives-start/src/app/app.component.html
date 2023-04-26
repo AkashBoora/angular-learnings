@@ -1,18 +1,67 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <button
-        class="btn btn-primary"
-        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
-      <br><br>
+      <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">
+        Only show odd numbers
+      </button>
+      <br /><br />
       <ul class="list-group">
-        <li
-          class="list-group-item">
-        </li>
+        <div *ngIf="onlyOdd">
+          <li
+            class="list-group-item"
+            *ngFor="let number of oddNumbers"
+            [ngClass]="{ odd: number % 2 === 1 }"
+            [ngStyle]="{
+              backgroundColor: number % 2 === 1 ? 'yellow' : 'transparent'
+            }"
+          >
+            {{ number }}
+          </li>
+        </div>
+        <!-- <div *ngIf="!onlyOdd">
+          <li
+            class="list-group-item"
+            *ngFor="let number of numbers"
+            [ngClass]="{ odd: number % 2 === 1 }"
+            [ngStyle]="{
+              backgroundColor: number % 2 === 1 ? 'yellow' : 'transparent'
+            }"
+          >
+            {{ number }}
+          </li>
+        </div> -->
+        <!-- <ng-template [ngIf]="!onlyOdd">
+        <div >
+          <li
+            class="list-group-item"
+            *ngFor="let number of numbers"
+            [ngClass]="{ odd: number % 2 === 1 }"
+            [ngStyle]="{
+              backgroundColor: number % 2 === 1 ? 'yellow' : 'transparent'
+            }"
+          >
+            {{ number }}
+          </li>
+        </div>
+        </ng-template> -->
+        <div *appUnlessDirective="onlyOdd">
+          <li
+            class="list-group-item"
+            *ngFor="let number of numbers"
+            [ngClass]="{ odd: number % 2 === 1 }"
+            [ngStyle]="{
+              backgroundColor: number % 2 === 1 ? 'yellow' : 'transparent'
+            }"
+          >
+            {{ number }}
+          </li>
+        </div>
       </ul>
       <ng-template [ngIf]="onlyOdd">
         <p>Only odd</p>
       </ng-template>
+      <p appBasicHighlight> Style me with appBasicHighlight</p>
+      <p [appBetterHighlight]="'red'" hoverColor='yellow'> Style me with appBetterHighlight</p>
     </div>
   </div>
 </div>
