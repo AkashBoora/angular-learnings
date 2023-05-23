@@ -13,6 +13,20 @@ export class AppComponent {
   genders = ['male', 'female'];
   suggestUserName() {
     const suggestedName = 'Superuser';
+    // this.signUpForm.setValue({
+    //   userData:{
+    //     username: suggestedName,
+    //     email: ''
+    //   },
+    //   secret: 'pet',
+    //   questionAnswer: '',
+    //   gender: 'male'
+    // })
+    this.signUpForm.form.patchValue({
+      userData: {
+        username: suggestedName
+      }
+    })
   }
 
   // onSubmit(form: NgForm){
