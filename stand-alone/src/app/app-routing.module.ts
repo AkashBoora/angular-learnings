@@ -7,17 +7,19 @@ import { WelcomeComponent } from './welcome/welcome.component';
 const routes: Route[] = [
   {
     path: '',
-    component: WelcomeComponent,
+    // component: WelcomeComponent,
+    loadComponent: () => import('./welcome/welcome.component').then(mod => mod.WelcomeComponent)
   },
   {
     path: 'about',
-    component: AboutComponent,
+    // component: AboutComponent,
+    loadComponent: () => import('./about/about.component').then(mod => mod.AboutComponent)
   },
   {
     path: 'dashboard',
     loadChildren: () =>
-      import('./dashboard/dashboard-routing.module').then(
-        (mod) => mod.DashboardRoutingModule
+      import('./dashboard/routes').then(
+        (mod) => mod.DASHBOARD_ROUTES
       ),
   },
 ];
