@@ -8,7 +8,7 @@ import { Component, signal } from '@angular/core';
   imports: [NgFor],
 })
 export class SignalComponent {
-  actions: string[] = [];
+  actions = signal<string[]>([]);
   counter = signal(0);
 
   increment() {
@@ -18,11 +18,11 @@ export class SignalComponent {
     // update takes functions where we can update value by using old value
     // set directly sets to value
     // mutate is same as update but it creates new value rather then updating previous value
-    this.actions.push('INCREMENT');
+    this.actions.mutate(oldValue=>oldValue.push('INCREMENT'));
   }
 
   decrement() {
     this.counter.update(oldValue => oldValue-1);
-    this.actions.push('DECREMENT');
+    this.actions.update(oldValue => [...oldValue, 'DECREMENT']);
   }
 }
