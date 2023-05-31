@@ -15,3 +15,5 @@ ng g -> generate files for angular(component, service, pipe ..etc)
 ng build -> building application optimizes code4
 
 schematics: blueprints certain angular commands can pick up
+
+differential loading is offered by angular, for different browsers different bundled are needed
