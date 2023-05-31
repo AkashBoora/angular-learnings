@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "test-deploy-5aa4e": {
+      "hosting": {
+        "angular-config": [
+          "test-deploy-5aa4e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "test-deploy-5aa4e"
+  }
+}
