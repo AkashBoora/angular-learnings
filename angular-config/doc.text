@@ -1,0 +1,17 @@
+create prettier file
+
+editor - config: make sure indentation is same for all users
+angular json- manages project config
+
+browser list: which browser our app support
+karma config: test config
+
+
+Basic CLI commands:
+ng serve -> serves application
+ng serve --open  -> serves and opens in client
+ng g -> generate files for angular(component, service, pipe ..etc)
+
+ng build -> building application optimizes code4
+
+schematics: blueprints certain angular commands can pick up
